@@ -1,0 +1,23 @@
+{
+    "tittle": "Make Profile",
+    "name": "Full Name",
+    "enter_name": "Enter Name",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "age": "Age",
+    "enter_age": "Enter Age",
+    "city": "Village/City",
+    "enter_city": "Enter City",
+    "education": "Education",
+    "enter_education": "Enter Education",
+    "occupation": "Occupation",
+    "enter_occupation": "Enter Occupation",
+    "caste": "Caste",
+    "enter_caste": "Enter Caste",
+    "about_you": "About You",
+    "enter_about_you": "Write About Yourself",
+    "upload_photos": "Upload Photos",
+    "upload_biodata": "Upload Biodata",
+    "save": "Save"
+  }

@@ -1,0 +1,23 @@
+{
+    "tittle": "प्रोफाइल तयार करा",
+    "name": "पूर्ण नाव",
+    "enter_name": "तुमचे नाव टाका",
+    "gender": "लिंग",
+    "male": "पुरुष",
+    "female": "स्त्री",
+    "age": "वय",
+    "enter_age": "तुमचे वय टाका",
+    "city": "गाव/शहर",
+    "enter_city": "गाव/शहर टाका",
+    "education": "शिक्षण",
+    "enter_education": "शिक्षण टाका",
+    "occupation": "व्यवसाय",
+    "enter_occupation": "व्यवसाय टाका",
+    "caste": "जात",
+    "enter_caste": "जात टाका",
+    "about_you": "तुमच्याबद्दल",
+    "enter_about_you": "स्वतःबद्दल लिहा",
+    "upload_photos": "फोटो अपलोड करा",
+    "upload_biodata": "बायोडाटा अपलोड करा",
+    "save": "जतन करा"
+  }

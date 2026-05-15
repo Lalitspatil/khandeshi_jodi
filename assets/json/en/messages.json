@@ -1,0 +1,7 @@
+{
+    "empty_phone_error": "मोबाईल नंबर टाका",
+    "phone_error": "योग्य 10 अंकी मोबाईल नंबर टाका",
+    "name_error": "नाव टाका",
+    "email_error": "योग्य ईमेल टाका",
+    "empty_email_error": "ईमेल टाका"
+  }

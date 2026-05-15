@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "541297617743",
+    "project_id": "khandeshi-shadi",
+    "storage_bucket": "khandeshi-shadi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541297617743:android:51b9493352cc47c6ca733a",
+        "android_client_info": {
+          "package_name": "com.example.khandeshi_shadi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541297617743-hk2d1b2bab5fg6hjoksj4bk3ifopej4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.khandeshi_shadi",
+            "certificate_hash": "b14e81685836c2f71885e359f900bd5e1e9722be"
+          }
+        },
+        {
+          "client_id": "541297617743-k7a0e74tcofrm1ohdm22q98t9vm0v1nv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7Nj4e6ssONuUoWUqVeSAfLj8_L97HI1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541297617743-k7a0e74tcofrm1ohdm22q98t9vm0v1nv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

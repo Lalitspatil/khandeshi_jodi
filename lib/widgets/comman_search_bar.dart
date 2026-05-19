@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:khandeshi_jodi/resources/colors.dart';
 import 'package:khandeshi_jodi/resources/sizes.dart';
 
-
 class CommanSearchBar extends StatelessWidget {
 
   void Function(String)? onChanged;
@@ -14,7 +13,7 @@ class CommanSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-                    onChanged: onChanged ,
+                    onChanged: onChanged,
                     decoration: InputDecoration(
                       hintText: hintText,
                       prefixIcon: const Icon(Icons.search),

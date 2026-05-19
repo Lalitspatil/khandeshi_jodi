@@ -17,7 +17,6 @@ class LoginController extends BaseModel {
     notifyListeners();
   }
 
-  /// 📱 SEND OTP
   void sendOtp(BuildContext context) async {
     if (!formKey.currentState!.validate()) return;
 
@@ -74,7 +73,6 @@ class LoginController extends BaseModel {
       );
        
       setLoading(false);
-      // 👉 HOME PAGE NAVIGATION
       Navigator.pushNamedAndRemoveUntil(
        context,
        Routes.makeProfile,

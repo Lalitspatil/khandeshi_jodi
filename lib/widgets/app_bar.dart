@@ -3,20 +3,29 @@ import 'package:khandeshi_jodi/resources/colors.dart';
 import 'package:khandeshi_jodi/resources/sizes.dart';
 import 'package:khandeshi_jodi/widgets/text_view.dart';
 
-
 class CommanAppBar extends StatelessWidget {
+  final String? text;
+  final Color? color;
+  final bool isBackButon;
+  final bool isLogoutIconShow;
+  final VoidCallback? onLogout;
 
-   String? text;
-   Color? color;
-   final bool isBackButon;
-
-   CommanAppBar({super.key,this.text,this.isBackButon=false,this.color});
+  const CommanAppBar({
+    super.key,
+    this.text,
+    this.isBackButon = false,
+    this.color,
+    this.isLogoutIconShow = false,
+    this.onLogout,
+  });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        leadingWidth: Sizes.s35,
-        leading: isBackButon
+      leadingWidth: Sizes.s35,
+
+      /// BACK BUTTON
+      leading: isBackButon
           ? GestureDetector(
               onTap: () => Navigator.pop(context),
               child: Padding(
@@ -29,10 +38,30 @@ class CommanAppBar extends StatelessWidget {
               ),
             )
           : null,
-        title: TextView(text: text, size: FontSizes.s20,
-        fontWeight: FontWeight.w600,color: color ?? CColors.black),
-        elevation: 1,
-        centerTitle: false,
-      );
+
+      /// TITLE
+      title: TextView(
+        text: text,
+        size: FontSizes.s20,
+        fontWeight: FontWeight.w600,
+        color: color ?? CColors.black,
+      ),
+
+      /// LOGOUT ICON
+      actions: [
+        if (isLogoutIconShow)
+          IconButton(
+            onPressed: onLogout,
+            icon: Icon(
+              Icons.logout,
+              color: color ?? CColors.black,
+              size: Sizes.s25,
+            ),
+          ),
+      ],
+
+      elevation: 1,
+      centerTitle: false,
+    );
   }
 }

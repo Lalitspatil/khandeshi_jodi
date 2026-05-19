@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:file_picker/file_picker.dart';
@@ -25,17 +23,19 @@ class ProfileServices {
   /// IMAGE PICKER
   final ImagePicker _picker = ImagePicker();
 
-  /// PICK MULTIPLE IMAGES
-  Future<List<File>> pickImages() async {
+  /// PICK SINGLE IMAGE
+  Future<File?> pickImage() async {
 
-    final List<XFile> images =
-        await _picker.pickMultiImage();
+    final XFile? image =
+        await _picker.pickImage(
+      source: ImageSource.gallery,
+    );
 
-    if (images.isNotEmpty) {
-      return images.map((e) => File(e.path)).toList();
+    if (image != null) {
+      return File(image.path);
     }
 
-    return [];
+    return null;
   }
 
   /// PICK BIODATA
@@ -61,17 +61,21 @@ class ProfileServices {
     return null;
   }
 
-  /// UPLOAD SINGLE FILE TO CLOUDINARY
-  Future<String?> uploadFile(File file) async {
+  /// UPLOAD FILE
+  Future<String?> uploadFile(
+      File file) async {
 
     try {
 
       final mimeType =
-          lookupMimeType(file.path)?.split('/');
+          lookupMimeType(file.path)
+              ?.split('/');
 
-      FormData formData = FormData.fromMap({
+      FormData formData =
+          FormData.fromMap({
 
-        "file": await MultipartFile.fromFile(
+        "file":
+            await MultipartFile.fromFile(
           file.path,
           contentType: MediaType(
             mimeType![0],
@@ -79,15 +83,18 @@ class ProfileServices {
           ),
         ),
 
-        "upload_preset": uploadPreset,
+        "upload_preset":
+            uploadPreset,
       });
 
-      final response = await Dio().post(
+      final response =
+          await Dio().post(
         "https://api.cloudinary.com/v1_1/$cloudName/auto/upload",
         data: formData,
       );
 
-      return response.data["secure_url"];
+      return response
+          .data["secure_url"];
 
     } catch (e) {
 
@@ -109,26 +116,23 @@ class ProfileServices {
     required String caste,
     required String about,
 
-    required List<File> images,
+    required File? image,
     required File? biodata,
 
   }) async {
 
-    final user = _auth.currentUser;
+    final user =
+        _auth.currentUser;
 
     if (user == null) return;
 
-    /// IMAGE URLS
-    List<String> imageUrls = [];
+    /// PROFILE IMAGE URL
+    String? imageUrl;
 
-    for (File image in images) {
+    if (image != null) {
 
-      String? url =
+      imageUrl =
           await uploadFile(image);
-
-      if (url != null) {
-        imageUrls.add(url);
-      }
     }
 
     /// BIODATA URL
@@ -137,7 +141,9 @@ class ProfileServices {
     if (biodata != null) {
 
       biodataUrl =
-          await uploadFile(biodata);
+          await uploadFile(
+        biodata,
+      );
     }
 
     /// SAVE FIRESTORE
@@ -159,7 +165,7 @@ class ProfileServices {
       "caste": caste,
       "about": about,
 
-      "images": imageUrls,
+      "profileImage": imageUrl,
       "biodata": biodataUrl,
 
       "createdAt":

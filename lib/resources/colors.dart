@@ -27,7 +27,10 @@ class CColors {
   static const lightBluishWhite = Color.fromRGBO(245, 247, 255, 1); 
   static const secondaryText = Color.fromRGBO(92, 92, 92, 1); 
 
-  static Color themeBg = hexToRgb('#E69500');
+  static const Color dullRed = Color(0xFFFF6584);
+  static Color themeBg = hexToRgb('#E94057');
+
+ // static Color themeBg = hexToRgb('#E69500');
   static Color green1 = hexToRgb('#14441A');
   static Color green2 = hexToRgb('#33913F');
   static Color dullText = hexToRgb('878787');

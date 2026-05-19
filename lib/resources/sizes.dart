@@ -69,10 +69,13 @@ class DeviceHeight {
   static double s40 = 40.h;
   static double s60 = 60.h;
   static double s62 = 62.h;
+  static double s63 = 63.h;
   static double s65 = 65.h;
+  static double s68 = 68.h;
   static double s70 = 70.h;
   static double s80 = 80.h;
   static double s85 = 85.h;
+  static double s89 = 89.h;
   static double s90 = 90.h;
   static double s95 = 95.h;
   static double s100 = 100.h;

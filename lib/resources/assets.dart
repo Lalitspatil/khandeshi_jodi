@@ -3,9 +3,7 @@ class Assets {
   static const splash = 'assets/splash/image.png';
   static const splashImage = 'assets/splash/login_bg.png';
   static const logo = 'assets/splash/logo.png';
-  static const insta = 'assets/home/insta.png';
-  static const fb = 'assets/home/fb.png';
-  static const whatsapp = 'assets/home/whatsapp.png';
+  static const user = 'assets/splash/user.png';
   static const noImage = 'assets/image.png';
   static const home = 'assets/bottom/home_icon.png';
   static const setting = 'assets/bottom/setting_icon.png';

@@ -35,7 +35,6 @@ class MakeProfileView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  /// NAME
                   CommonFormField(
                     text: vm.getValue('name'),
                     hintText: vm.getValue('enter_name'),
@@ -44,7 +43,6 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// GENDER
                   TextView(text: vm.getValue('gender')),
                   SizedBox(height: DeviceHeight.s10),
 
@@ -75,7 +73,6 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// AGE & CITY
                   Row(
                     children: [
 
@@ -102,7 +99,6 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// EDUCATION
                   CommonFormField(
                     text: vm.getValue('education'),
                     hintText: vm.getValue('enter_education'),
@@ -111,7 +107,6 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// OCCUPATION
                   CommonFormField(
                     text: vm.getValue('occupation'),
                     hintText: vm.getValue('enter_occupation'),
@@ -120,7 +115,6 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// CASTE
                   CommonFormField(
                     text: vm.getValue('caste'),
                     hintText: vm.getValue('enter_caste'),
@@ -129,7 +123,6 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// ABOUT
                   CommonFormField(
                     text: vm.getValue('about_you'),
                     hintText: vm.getValue('enter_about_you'),
@@ -139,17 +132,19 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s30),
 
-                  /// PHOTO UPLOAD
                   CommonUploadSection(
                     title: vm.getValue('upload_photos'),
                     icon: Icons.photo_library_outlined,
-                    onTap: () => vm.pickImages(),
-                    imagePaths: vm.profilePhotos,
+                    onTap: () => vm.pickImage(),
+                  
+                    imagePaths:
+                        vm.profilePhoto != null
+                            ? [vm.profilePhoto!]
+                            : [],
                   ),
 
                   SizedBox(height: DeviceHeight.s20),
 
-                  /// BIODATA UPLOAD
                   CommonUploadSection(
                     title: vm.getValue('upload_biodata'),
                     icon: Icons.picture_as_pdf_outlined,
@@ -159,12 +154,11 @@ class MakeProfileView extends StatelessWidget {
 
                   SizedBox(height: DeviceHeight.s30),
 
-                  /// SAVE BUTTON
                   SizedBox(
                     width: double.infinity,
                     height: DeviceHeight.s50,
                     child: AppButton(
-                  
+                      backgroundColor: CColors.themeBg,
                       text: vm.isLoading
                           ? "Saving..."
                           : vm.getValue('save'),

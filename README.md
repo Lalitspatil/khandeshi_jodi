@@ -61,6 +61,18 @@ The application currently includes:
 
 More screens and functionality are being added as development continues.
 
+### 📸 App Screenshots
+
+#### Login
+![Login Screen](login.png)
+
+#### Create Profile
+![Create Profile Screen](create-profile.png)
+
+#### Home
+![Home Screen](home.png)
+
+
 ## 📌 Project Status
 
 **Development Progress:** Approximately 30%
